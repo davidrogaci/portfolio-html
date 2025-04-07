@@ -77,3 +77,20 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach((section) => {
   observer.observe(section);
 });
+
+// Script para el efecto de scroll en el navbar
+const nav = document.querySelector(".main-nav");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 0) {
+    nav.classList.add("scrolled");
+    if (navLinks) {
+      navLinks.classList.add("scrolled");
+    }
+  } else {
+    nav.classList.remove("scrolled");
+    if (navLinks) {
+      navLinks.classList.remove("scrolled");
+    }
+  }
+});
