@@ -59,4 +59,4 @@ This project is under the Apache License. See the `LICENSE` file for more detail
 
 ## 👤 Author
 
-David Rodriguez - [davidrogaci.dev]
+David Rodriguez - [https://davidrogaci.dev]
