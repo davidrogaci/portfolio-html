@@ -303,7 +303,14 @@ main {
    ========================================================================== */
 .projects-section {
   padding: 4rem 2rem;
-  background-color: #f8fafc;
+  background-color: var(--background-color);
+}
+
+.projects-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  color: var(--text-color);
 }
 
 .projects-container {
@@ -454,7 +461,14 @@ main {
    ========================================================================== */
 .skills-section {
   padding: 4rem 2rem;
-  background-color: #f8fafc;
+  background-color: var(--background-color);
+}
+
+.skills-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  color: var(--text-color);
 }
 
 .skills-container {

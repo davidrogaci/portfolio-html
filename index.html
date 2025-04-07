@@ -756,17 +756,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-      // Script para el menú móvil
-      const mobileMenuButton = document.querySelector(".mobile-menu-button");
-      const navLinks = document.querySelector(".nav-links");
-
-      mobileMenuButton.addEventListener("click", () => {
-        const isExpanded =
-          mobileMenuButton.getAttribute("aria-expanded") === "true";
-        mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
-        navLinks.classList.toggle("active");
-      });
-    </script>
+    <script src="scripts.js" defer></script>
   </body>
 </html>
