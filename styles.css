@@ -826,7 +826,7 @@ main {
   background-color: var(--background-color);
   padding: 2rem 0;
   border-top: 1px solid rgba(75, 75, 75, 0.1);
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .footer-content {
