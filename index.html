@@ -10,221 +10,677 @@
     />
     <meta name="robots" content="index, follow" />
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <nav>
-        <a href="index.html"><h1>@davidrogaci Portfolio</h1></a>
-        <ul>
-          <li><a href="#about-me">About me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="logo">
+          <h1>@davidrogaci Portfolio</h1>
+        </a>
+        <button
+          class="mobile-menu-button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="menu-icon"></span>
+        </button>
+        <ul class="nav-links">
+          <li>
+            <a href="#about-me" class="nav-link" aria-current="page"
+              >About me</a
+            >
+          </li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="about-me">
-        <h2>About me</h2>
-        <p>
-          I'm David, a <strong>Frontend Developer</strong> with experience in
-          <strong>React (TypeScript)</strong> and <strong>Angular</strong>,
-          focused on creating modern, fast, and optimized interfaces. I
-          specialize in <strong>Web Performance</strong>,
-          <strong>SEO</strong> and <strong>Accessibility</strong>, ensuring that
-          each project not only looks good but works perfectly. Always looking
-          to improve, learn and provide innovative solutions.
-        </p>
+      <section id="about-me" class="about-section">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>About me</h2>
+            <p class="about-description">
+              I'm David, a <strong>Frontend Developer</strong> with experience
+              in <strong>React (TypeScript)</strong> and
+              <strong>Angular</strong>, focused on creating modern, fast, and
+              optimized interfaces. I specialize in
+              <strong>Web Performance</strong>, <strong>SEO</strong> and
+              <strong>Accessibility</strong>, ensuring that each project not
+              only looks good but works perfectly. Always looking to improve,
+              learn and provide innovative solutions.
+            </p>
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <img
+                  src="images/code.svg"
+                  alt="Code icon"
+                  class="highlight-icon"
+                />
+                <span>Clean & Efficient Code</span>
+              </div>
+              <div class="highlight-item">
+                <img
+                  src="images/performance.svg"
+                  alt="Performance icon"
+                  class="highlight-icon"
+                />
+                <span>Performance Optimization</span>
+              </div>
+              <div class="highlight-item">
+                <img
+                  src="images/accessibility.svg"
+                  alt="Accessibility icon"
+                  class="highlight-icon"
+                />
+                <span>Accessibility First</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img
+              src="images/profile.png"
+              alt="David Rodriguez"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </section>
 
-      <section id="projects">
+      <section id="projects" class="projects-section">
         <h2>Featured Projects</h2>
-        <article class="projects-container">
-          <section class="project-card">
-            <h3>Sneakers E-commerce</h3>
-            <div class="project-links">
-              <a
-                href="https://github.com/davidrogaci/ecommerce-rodriguez"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="View Sneakers E-commerce on GitHub"
-              >
-                <span>GitHub Repository</span>
-              </a>
-              <a
-                href="https://ecommerce-rodriguez.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="View Sneakers E-commerce on GitHub"
-              >
-                <span>Live Demo</span>
-              </a>
+        <div class="projects-container">
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="images/sneakers-ecommerce.png"
+                alt="Sneakers E-commerce Preview"
+                loading="lazy"
+              />
             </div>
-            <p class="project-description">
-              A modern e-commerce developed with React + Vite, focused on
-              performance and user experience. Features an intuitive interface,
-              product management and a dynamic shopping cart.
-            </p>
-            <ul class="project-tech-stack">
-              <li>React</li>
-              <li>TypeScript</li>
-              <li>Vite</li>
-              <li>CSS Modules</li>
-            </ul>
-          </section>
+            <div class="project-content">
+              <h3>Sneakers E-commerce</h3>
+              <p class="project-description">
+                A modern e-commerce developed with React + Vite, focused on
+                performance and user experience. Features an intuitive
+                interface, product management and a dynamic shopping cart.
+              </p>
+              <ul class="project-tech-stack">
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Vite</li>
+                <li>CSS Modules</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/davidrogaci/ecommerce-rodriguez"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-link"
+                  aria-label="View Sneakers E-commerce on GitHub"
+                >
+                  <img
+                    src="images/github.svg"
+                    alt="GitHub icon"
+                    class="project-link-icon"
+                  />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href="https://ecommerce-rodriguez.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-link"
+                  aria-label="View Sneakers E-commerce Live Demo"
+                >
+                  <img
+                    src="images/external-link.svg"
+                    alt="External link icon"
+                    class="project-link-icon"
+                  />
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
 
-          <section class="project-card">
-            <h3>Landing Page - Jordan 1 High</h3>
-            <div class="project-links">
-              <a
-                href="https://github.com/davidrogaci/Jordan-1-Retro-Spider"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="View Jordan 1 Landing Page on GitHub"
-              >
-                <span>GitHub Repository</span>
-              </a>
-              <a
-                href="https://jordan-1-retro-spider.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="View Jordan 1 Landing Page on GitHub"
-              >
-                <span>Live Demo</span>
-              </a>
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="images/jordan-landing.png"
+                alt="Jordan 1 Landing Page Preview"
+                loading="lazy"
+              />
             </div>
-            <p class="project-description">
-              Static landing page developed with HTML, CSS, SCSS and JavaScript,
-              designed to showcase the Jordan 1 Retro Spider with a responsive
-              and optimized design.
-            </p>
-            <ul class="project-tech-stack">
-              <li>HTML5</li>
-              <li>SCSS</li>
-              <li>JavaScript</li>
-              <li>Responsive Design</li>
-            </ul>
-          </section>
+            <div class="project-content">
+              <h3>Landing Page - Jordan 1 High</h3>
+              <p class="project-description">
+                Static landing page developed with HTML, CSS, SCSS and
+                JavaScript, designed to showcase the Jordan 1 Retro Spider with
+                a responsive and optimized design.
+              </p>
+              <ul class="project-tech-stack">
+                <li>HTML5</li>
+                <li>SCSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/davidrogaci/Jordan-1-Retro-Spider"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-link"
+                  aria-label="View Jordan 1 Landing Page on GitHub"
+                >
+                  <img
+                    src="images/github.svg"
+                    alt="GitHub icon"
+                    class="project-link-icon"
+                  />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href="https://jordan-1-retro-spider.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-link"
+                  aria-label="View Jordan 1 Landing Page Live Demo"
+                >
+                  <img
+                    src="images/external-link.svg"
+                    alt="External link icon"
+                    class="project-link-icon"
+                  />
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
 
-          <section class="project-card">
-            <h3>Loan Calculator</h3>
-            <div class="project-links">
-              <a
-                href="https://github.com/davidrogaci/proyectofinaljs"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="View Loan Calculator on GitHub"
-              >
-                <span>GitHub Repository</span>
-              </a>
-              <a
-                href="https://calculadora-prestamos-one.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="View Loan Calculator on GitHub"
-              >
-                <span>Live Demo</span>
-              </a>
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="images/loan-calculator.png"
+                alt="Loan Calculator Preview"
+                loading="lazy"
+              />
             </div>
-            <p class="project-description">
-              A simple web application developed with JavaScript, HTML and CSS,
-              that allows users to calculate loan installments and total amounts
-              quickly and accurately.
-            </p>
-            <ul class="project-tech-stack">
-              <li>JavaScript</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>DOM Manipulation</li>
-            </ul>
-          </section>
-        </article>
+            <div class="project-content">
+              <h3>Loan Calculator</h3>
+              <p class="project-description">
+                A simple web application developed with JavaScript, HTML and
+                CSS, that allows users to calculate loan installments and total
+                amounts quickly and accurately.
+              </p>
+              <ul class="project-tech-stack">
+                <li>JavaScript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>DOM Manipulation</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/davidrogaci/proyectofinaljs"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-link"
+                  aria-label="View Loan Calculator on GitHub"
+                >
+                  <img
+                    src="images/github.svg"
+                    alt="GitHub icon"
+                    class="project-link-icon"
+                  />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href="https://calculadora-prestamos-one.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-link"
+                  aria-label="View Loan Calculator Live Demo"
+                >
+                  <img
+                    src="images/external-link.svg"
+                    alt="External link icon"
+                    class="project-link-icon"
+                  />
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="skills">
+      <section id="skills" class="skills-section">
         <h2>Skills</h2>
-        <article class="skills-container">
-          <section class="skill-category">
-            <h3>Frontend Core</h3>
-            <ul>
-              <li>HTML5</li>
-              <li>CSS3 / SCSS</li>
-              <li>JavaScript (ES6+)</li>
-              <li>TypeScript</li>
+        <div class="skills-container">
+          <div class="skill-category">
+            <div class="skill-header">
+              <img
+                src="images/frontend.svg"
+                alt="Frontend icon"
+                class="skill-icon"
+              />
+              <h3>Frontend Core</h3>
+            </div>
+            <ul class="skill-list">
+              <li
+                class="skill-item"
+                data-tooltip="HTML5 - Semantic structure, accessibility and SEO"
+              >
+                <span class="skill-name"
+                  >HTML5 <span class="skill-percentage">95%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="CSS3/SCSS - Animations, modern layouts and responsive design"
+              >
+                <span class="skill-name"
+                  >CSS3 / SCSS <span class="skill-percentage">90%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="JavaScript ES6+ - Functional programming, async and DOM manipulation"
+              >
+                <span class="skill-name"
+                  >JavaScript (ES6+)
+                  <span class="skill-percentage">85%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="TypeScript - Static typing and safer development"
+              >
+                <span class="skill-name"
+                  >TypeScript <span class="skill-percentage">80%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </li>
             </ul>
-          </section>
+          </div>
 
-          <section class="skill-category">
-            <h3>Frameworks & Libraries</h3>
-            <ul>
-              <li>React</li>
-              <li>Angular</li>
-              <li>Redux / Context API</li>
+          <div class="skill-category">
+            <div class="skill-header">
+              <img
+                src="images/frameworks.svg"
+                alt="Frameworks icon"
+                class="skill-icon"
+              />
+              <h3>Frameworks & Libraries</h3>
+            </div>
+            <ul class="skill-list">
+              <li
+                class="skill-item"
+                data-tooltip="React - Hooks, Context API and functional components"
+              >
+                <span class="skill-name"
+                  >React <span class="skill-percentage">90%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="Angular - Components, services and RxJS"
+              >
+                <span class="skill-name"
+                  >Angular <span class="skill-percentage">75%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="Redux/Context API - Global state management"
+              >
+                <span class="skill-name"
+                  >Redux / Context API
+                  <span class="skill-percentage">85%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </li>
             </ul>
-          </section>
+          </div>
 
-          <section class="skill-category">
-            <h3>Development Tools</h3>
-            <ul>
-              <li>Git / GitHub</li>
-              <li>Node.js</li>
-              <li>Vite / Webpack</li>
-              <li>Jest / React Testing Library</li>
+          <div class="skill-category">
+            <div class="skill-header">
+              <img src="images/tools.svg" alt="Tools icon" class="skill-icon" />
+              <h3>Development Tools</h3>
+            </div>
+            <ul class="skill-list">
+              <li
+                class="skill-item"
+                data-tooltip="Version control and collaborative work"
+              >
+                <span class="skill-name"
+                  >Git / GitHub <span class="skill-percentage">90%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="Runtime environment and package management"
+              >
+                <span class="skill-name"
+                  >Node.js <span class="skill-percentage">70%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 70%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="Asset bundling and optimization"
+              >
+                <span class="skill-name"
+                  >Vite / Webpack
+                  <span class="skill-percentage">80%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="Unit and integration testing"
+              >
+                <span class="skill-name"
+                  >Jest / React Testing Library
+                  <span class="skill-percentage">75%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </li>
             </ul>
-          </section>
+          </div>
 
-          <section class="skill-category">
-            <h3>Concepts & Practices</h3>
-            <ul>
-              <li>Responsive Design</li>
-              <li>SEO Optimization</li>
-              <li>Web Accessibility (WCAG)</li>
-              <li>UX/UI Design Principles</li>
-              <li>Performance Optimization</li>
+          <div class="skill-category">
+            <div class="skill-header">
+              <img
+                src="images/concepts.svg"
+                alt="Concepts icon"
+                class="skill-icon"
+              />
+              <h3>Concepts & Practices</h3>
+            </div>
+            <ul class="skill-list">
+              <li
+                class="skill-item"
+                data-tooltip="Responsive design - Mobile-first and breakpoints"
+              >
+                <span class="skill-name"
+                  >Responsive Design
+                  <span class="skill-percentage">95%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="SEO - Search engine optimization"
+              >
+                <span class="skill-name"
+                  >SEO Optimization
+                  <span class="skill-percentage">85%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="WCAG - Web accessibility and ARIA"
+              >
+                <span class="skill-name"
+                  >Web Accessibility (WCAG)
+                  <span class="skill-percentage">80%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="UX/UI - Design principles and user experience"
+              >
+                <span class="skill-name"
+                  >UX/UI Design Principles
+                  <span class="skill-percentage">75%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="Optimization - Performance and fast loading"
+              >
+                <span class="skill-name"
+                  >Performance Optimization
+                  <span class="skill-percentage">80%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </li>
             </ul>
-          </section>
+          </div>
 
-          <section class="skill-category">
-            <h3>Soft Skills</h3>
-            <ul>
-              <li>Team Collaboration</li>
-              <li>Effective Communication</li>
-              <li>Problem Solving</li>
-              <li>Continuous Learning</li>
+          <div class="skill-category">
+            <div class="skill-header">
+              <img
+                src="images/soft-skills.svg"
+                alt="Soft Skills icon"
+                class="skill-icon"
+              />
+              <h3>Soft Skills</h3>
+            </div>
+            <ul class="skill-list">
+              <li
+                class="skill-item"
+                data-tooltip="Effective communication and teamwork"
+              >
+                <span class="skill-name"
+                  >Teamwork & Communication
+                  <span class="skill-percentage">90%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="Problem solving and critical thinking"
+              >
+                <span class="skill-name"
+                  >Problem Solving
+                  <span class="skill-percentage">85%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="Adaptability and continuous learning"
+              >
+                <span class="skill-name"
+                  >Adaptability <span class="skill-percentage">95%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%"></div>
+                </div>
+              </li>
+              <li
+                class="skill-item"
+                data-tooltip="Time management and organization"
+              >
+                <span class="skill-name"
+                  >Time Management
+                  <span class="skill-percentage">80%</span></span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </li>
             </ul>
-          </section>
-        </article>
+          </div>
+        </div>
       </section>
 
-      <section id="contact">
+      <section id="contact" class="contact-section">
         <h2>Contact</h2>
-        <p>
-          <a href="mailto:davidrogaci@gmail.com">Send me an email</a>
-        </p>
+        <div class="contact-content">
+          <p class="contact-description">
+            I'm always open to new opportunities and collaborations. Feel free
+            to reach out!
+          </p>
+          <div class="contact-methods">
+            <a href="mailto:davidrogaci@gmail.com" class="contact-link email">
+              <img
+                src="images/email.svg"
+                alt="Email icon"
+                class="contact-icon"
+              />
+              <span>davidrogaci@gmail.com</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/davidrogaci"
+              target="_blank"
+              rel="noreferrer"
+              class="contact-link linkedin"
+            >
+              <img
+                src="images/linkedin.svg"
+                alt="LinkedIn icon"
+                class="contact-icon"
+              />
+              <span>LinkedIn Profile</span>
+            </a>
+            <a
+              href="https://github.com/davidrogaci"
+              target="_blank"
+              rel="noreferrer"
+              class="contact-link github"
+            >
+              <img
+                src="images/github.svg"
+                alt="GitHub icon"
+                class="contact-icon"
+              />
+              <span>GitHub Profile</span>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>All rights reserved davidrogaci&copy; 2025</p>
-      <a href="https://x.com/davidrogaci" target="_blank" rel="noreferrer"
-        ><img loading="lazy" src="images/x(twitter).svg" alt="x-logo"
-      /></a>
-      <a
-        href="https://www.instagram.com/davidrogaci"
-        target="_blank"
-        rel="noreferrer"
-        ><img loading="lazy" src="images/instagram.svg" alt="instagram-logo"
-      /></a>
-      <a
-        href="https://www.linkedin.com/in/davidrogaci"
-        target="_blank"
-        rel="noreferrer"
-        ><img loading="lazy" src="images/linkedin.svg" alt="linkedin-logo"
-      /></a>
-      <a href="https://github.com/davidrogaci" target="_blank" rel="noreferrer"
-        ><img loading="lazy" src="images/github.svg" alt="github-logo"
-      /></a>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p class="copyright">All rights reserved davidrogaci&copy; 2025</p>
+        <div class="social-links">
+          <a
+            href="https://x.com/davidrogaci"
+            target="_blank"
+            rel="noreferrer"
+            class="social-link"
+            aria-label="Visit my X (Twitter) profile"
+          >
+            <img
+              loading="lazy"
+              src="images/x(twitter).svg"
+              alt="x-logo"
+              class="social-icon"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/davidrogaci"
+            target="_blank"
+            rel="noreferrer"
+            class="social-link"
+            aria-label="Visit my Instagram profile"
+          >
+            <img
+              loading="lazy"
+              src="images/instagram.svg"
+              alt="instagram-logo"
+              class="social-icon"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/davidrogaci"
+            target="_blank"
+            rel="noreferrer"
+            class="social-link"
+            aria-label="Visit my LinkedIn profile"
+          >
+            <img
+              loading="lazy"
+              src="images/linkedin.svg"
+              alt="linkedin-logo"
+              class="social-icon"
+            />
+          </a>
+          <a
+            href="https://github.com/davidrogaci"
+            target="_blank"
+            rel="noreferrer"
+            class="social-link"
+            aria-label="Visit my GitHub profile"
+          >
+            <img
+              loading="lazy"
+              src="images/github.svg"
+              alt="github-logo"
+              class="social-icon"
+            />
+          </a>
+        </div>
+      </div>
     </footer>
+    <script>
+      const mobileMenuButton = document.querySelector(".mobile-menu-button");
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileMenuButton.addEventListener("click", () => {
+        const isExpanded =
+          mobileMenuButton.getAttribute("aria-expanded") === "true";
+        mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+        navLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
