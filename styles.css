@@ -8,6 +8,7 @@
   --text-color: #1f2937;
   --text-color-light: #4b5563;
   --background-color: #ffffff;
+  --background-gradient: linear-gradient(135deg, #e5e7eb 0%, #ffffff 100%);
   --hover-color: #1d4ed8;
   --transition-speed: 0.2s;
   --focus-outline: 2px solid var(--primary-color);
@@ -24,9 +25,10 @@
   --primary-color-dark: #2563eb;
   --text-color: #f3f4f6;
   --text-color-light: #d1d5db;
-  --background-color: #111827;
+  --background-color: #030712;
+  --background-gradient: linear-gradient(135deg, #111827 0%, #030712 100%);
   --hover-color: #60a5fa;
-  --card-bg: #1f2937;
+  --card-bg: #111827;
   --border-color: rgba(255, 255, 255, 0.1);
   --hover-bg: rgba(59, 130, 246, 0.2);
   --hover-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -61,11 +63,12 @@ body {
     Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.4;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background: var(--background-gradient);
+  min-height: 100vh;
   padding-top: 4rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color var(--transition-speed) ease,
+  transition: background var(--transition-speed) ease,
     color var(--transition-speed) ease;
 }
 
@@ -97,6 +100,8 @@ body {
 .logo h1 {
   font-size: 1.5rem;
   font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .nav-links {
@@ -302,12 +307,8 @@ main {
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform var(--transition-speed) ease;
-  padding: 0.5rem;
-  background: linear-gradient(
-    45deg,
-    var(--primary-color),
-    var(--primary-color-dark)
-  );
+  padding: 0;
+  background: none;
 }
 
 .about-image img {
@@ -315,17 +316,13 @@ main {
   height: auto;
   display: block;
   transition: transform var(--transition-speed) ease;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
 }
 
 .about-image:hover {
   transform: scale(1.02);
   box-shadow: var(--hover-shadow);
-  background: linear-gradient(
-    45deg,
-    var(--primary-color-dark),
-    var(--primary-color)
-  );
+  background: none;
 }
 
 .about-image:hover img {
