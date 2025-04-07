@@ -80,7 +80,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--background-color);
   position: fixed;
   top: 0;
   left: 0;
