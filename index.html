@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags y configuración básica -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>davidrogaci Portfolio</title>
+    <title>David Rodriguez | Frontend Developer Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of David Rodriguez, web developer, HTML, CSS, JavaScript, React, Node.js, Git, GitHub, Responsive Design, SEO, Accessibility, UX/UI"
+      content="Portfolio of David Rodriguez, a Frontend Developer specializing in React, TypeScript, and Angular. Expert in Web Performance, SEO, and Accessibility."
     />
     <meta name="robots" content="index, follow" />
+    <meta name="author" content="David Rodriguez" />
+    <meta
+      name="keywords"
+      content="Frontend Developer, React, TypeScript, Angular, Web Performance, SEO, Accessibility, Portfolio"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://davidrogaci.com/" />
+    <meta
+      property="og:title"
+      content="David Rodriguez | Frontend Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio of David Rodriguez, a Frontend Developer specializing in React, TypeScript, and Angular."
+    />
+    <meta
+      property="og:image"
+      content="https://davidrogaci.com/images/profile/profile.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://davidrogaci.com/" />
+    <meta
+      property="twitter:title"
+      content="David Rodriguez | Frontend Developer Portfolio"
+    />
+    <meta
+      property="twitter:description"
+      content="Portfolio of David Rodriguez, a Frontend Developer specializing in React, TypeScript, and Angular."
+    />
+    <meta
+      property="twitter:image"
+      content="https://davidrogaci.com/images/profile/profile.png"
+    />
+
+    <!-- Enlaces a recursos externos -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +59,8 @@
     />
   </head>
   <body>
-    <header>
+    <!-- Header y navegación principal -->
+    <header role="banner">
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html" class="logo">
           <h1>@davidrogaci Portfolio</h1>
@@ -28,10 +69,11 @@
           class="mobile-menu-button"
           aria-label="Toggle menu"
           aria-expanded="false"
+          aria-controls="nav-links"
         >
           <span class="menu-icon"></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
           <li>
             <a href="#about-me" class="nav-link" aria-current="page"
               >About me</a
@@ -44,11 +86,16 @@
       </nav>
     </header>
 
-    <main>
-      <section id="about-me" class="about-section">
+    <main role="main">
+      <!-- Sección Sobre Mí -->
+      <section
+        id="about-me"
+        class="about-section"
+        aria-labelledby="about-title"
+      >
         <div class="about-content">
           <div class="about-text">
-            <h2>About me</h2>
+            <h2 id="about-title">About me</h2>
             <p class="about-description">
               I'm David, a <strong>Frontend Developer</strong> with experience
               in <strong>React (TypeScript)</strong> and
@@ -59,28 +106,31 @@
               only looks good but works perfectly. Always looking to improve,
               learn and provide innovative solutions.
             </p>
-            <div class="about-highlights">
-              <div class="highlight-item">
+            <div class="about-highlights" role="list">
+              <div class="highlight-item" role="listitem">
                 <img
                   src="images/icons/code.svg"
-                  alt="Code icon"
+                  alt=""
                   class="highlight-icon"
+                  aria-hidden="true"
                 />
                 <span>Clean & Efficient Code</span>
               </div>
-              <div class="highlight-item">
+              <div class="highlight-item" role="listitem">
                 <img
                   src="images/icons/performance.svg"
-                  alt="Performance icon"
+                  alt=""
                   class="highlight-icon"
+                  aria-hidden="true"
                 />
                 <span>Performance Optimization</span>
               </div>
-              <div class="highlight-item">
+              <div class="highlight-item" role="listitem">
                 <img
                   src="images/icons/accessibility.svg"
-                  alt="Accessibility icon"
+                  alt=""
                   class="highlight-icon"
+                  aria-hidden="true"
                 />
                 <span>Accessibility First</span>
               </div>
@@ -89,17 +139,24 @@
           <div class="about-image">
             <img
               src="images/profile/profile.png"
-              alt="David Rodriguez"
+              alt="David Rodriguez - Frontend Developer"
               loading="lazy"
+              width="400"
+              height="400"
             />
           </div>
         </div>
       </section>
 
-      <section id="projects" class="projects-section">
-        <h2>Featured Projects</h2>
-        <div class="projects-container">
-          <article class="project-card">
+      <!-- Sección de Proyectos Destacados -->
+      <section
+        id="projects"
+        class="projects-section"
+        aria-labelledby="projects-title"
+      >
+        <h2 id="projects-title">Featured Projects</h2>
+        <div class="projects-container" role="list">
+          <article class="project-card" role="listitem">
             <div class="project-image">
               <img
                 src="images/projects/sneakers-ecommerce.png"
@@ -153,7 +210,7 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" role="listitem">
             <div class="project-image">
               <img
                 src="images/projects/jordan-landing.png"
@@ -207,7 +264,7 @@
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" role="listitem">
             <div class="project-image">
               <img
                 src="images/projects/loan-calculator.png"
@@ -263,9 +320,14 @@
         </div>
       </section>
 
-      <section id="skills" class="skills-section">
-        <h2>Skills</h2>
-        <div class="skills-container">
+      <!-- Sección de Habilidades -->
+      <section
+        id="skills"
+        class="skills-section"
+        aria-labelledby="skills-title"
+      >
+        <h2 id="skills-title">Skills</h2>
+        <div class="skills-container" role="list">
           <div class="skill-category">
             <div class="skill-header">
               <img
@@ -565,45 +627,59 @@
         </div>
       </section>
 
-      <section id="contact" class="contact-section">
-        <h2>Contact</h2>
+      <!-- Sección de Contacto -->
+      <section
+        id="contact"
+        class="contact-section"
+        aria-labelledby="contact-title"
+      >
+        <h2 id="contact-title">Contact</h2>
         <div class="contact-content">
           <p class="contact-description">
             I'm always open to new opportunities and collaborations. Feel free
             to reach out!
           </p>
-          <div class="contact-methods">
-            <a href="mailto:davidrogaci@gmail.com" class="contact-link email">
+          <div class="contact-methods" role="list">
+            <a
+              href="mailto:davidrogaci@gmail.com"
+              class="contact-link email"
+              role="listitem"
+            >
               <img
                 src="images/icons/email.svg"
-                alt="Email icon"
+                alt=""
                 class="contact-icon"
+                aria-hidden="true"
               />
               <span>davidrogaci@gmail.com</span>
             </a>
             <a
               href="https://linkedin.com/in/davidrogaci"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
               class="contact-link linkedin"
+              role="listitem"
             >
               <img
                 src="images/icons/linkedin.svg"
-                alt="LinkedIn icon"
+                alt=""
                 class="contact-icon"
+                aria-hidden="true"
               />
               <span>LinkedIn Profile</span>
             </a>
             <a
               href="https://github.com/davidrogaci"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
               class="contact-link github"
+              role="listitem"
             >
               <img
                 src="images/icons/github.svg"
-                alt="GitHub icon"
+                alt=""
                 class="contact-icon"
+                aria-hidden="true"
               />
               <span>GitHub Profile</span>
             </a>
@@ -612,22 +688,25 @@
       </section>
     </main>
 
-    <footer class="main-footer">
+    <!-- Footer y enlaces sociales -->
+    <footer class="main-footer" role="contentinfo">
       <div class="footer-content">
         <p class="copyright">All rights reserved davidrogaci&copy; 2025</p>
-        <div class="social-links">
+        <div class="social-links" role="list">
           <a
             href="https://x.com/davidrogaci"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
             class="social-link"
             aria-label="Visit my X (Twitter) profile"
+            role="listitem"
           >
             <img
               loading="lazy"
               src="images/icons/x(twitter).svg"
-              alt="x-logo"
+              alt=""
               class="social-icon"
+              aria-hidden="true"
             />
           </a>
           <a
@@ -675,7 +754,10 @@
         </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
     <script>
+      // Script para el menú móvil
       const mobileMenuButton = document.querySelector(".mobile-menu-button");
       const navLinks = document.querySelector(".nav-links");
 
