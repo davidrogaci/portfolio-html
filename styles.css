@@ -18,6 +18,8 @@
   --hover-bg: rgba(37, 99, 235, 0.1);
   --hover-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --icon-color: #1f2937;
+  --blur-effect: blur(10px);
+  --backdrop-filter: var(--blur-effect);
 }
 
 [data-theme="dark"] {
@@ -92,9 +94,9 @@ body {
 
 .main-nav.scrolled {
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+  backdrop-filter: var(--backdrop-filter);
+  border-bottom: 1px solid var(--border-color);
   box-shadow: none;
 }
 
@@ -134,7 +136,7 @@ body {
 
 .nav-link[aria-current="page"] {
   color: var(--primary-color);
-  background-color: rgba(37, 99, 235, 0.1);
+  background-color: var(--hover-bg);
 }
 
 .nav-link:focus-visible {
@@ -198,9 +200,9 @@ body {
 
   .nav-links.scrolled {
     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: var(--backdrop-filter);
+    backdrop-filter: var(--backdrop-filter);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .nav-links.active {
@@ -345,7 +347,7 @@ main {
 /* Media queries para la sección About */
 @media (max-width: 768px) {
   .about-section {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
   }
 
   .about-content {
@@ -361,6 +363,7 @@ main {
 
   .about-description {
     font-size: 1rem;
+    line-height: 1.6;
   }
 }
 
@@ -906,9 +909,7 @@ main {
   }
 }
 
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
+/* Preferencias de reducción de movimiento */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -918,15 +919,16 @@ main {
   }
 }
 
-@media (max-width: 768px) {
-  // ... existing code ...
-}
-
 /* ==========================================================================
    Animaciones
    ========================================================================== */
 @keyframes slideIn {
-  // ... existing code ...
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress-width);
+  }
 }
 
 .theme-toggle {
