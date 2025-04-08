@@ -8,11 +8,46 @@
   ],
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "/images/(.*)",
+      "headers": {
+        "cache-control": "public, max-age=604800",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/(.*)\\.(?:js|css|json|txt|html|xml)",
+      "headers": {
+        "cache-control": "public, max-age=3600",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "dest": "/$1.$2"
     },
     {
       "src": "/(.*)",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
       "dest": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
     }
   ]
 }
