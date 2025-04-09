@@ -68,7 +68,7 @@ This project is under the Apache License. See the `LICENSE` file for more detail
 
 ## 👤 Author
 
-David Rodriguez - [https://davidrogaci.github.io/portfolio-html/]
+David Rodriguez - [https://www.davidrogaci.dev/]
 
 ## 🤝 Contributing
 
