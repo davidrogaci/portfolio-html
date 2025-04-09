@@ -681,8 +681,8 @@ main {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--text-color);
-  color: white;
+  background-color: var(--card-bg);
+  color: var(--text-color);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-size: 0.75rem;
@@ -690,6 +690,8 @@ main {
   margin-bottom: 0.5rem;
   opacity: 0;
   transition: opacity var(--transition-speed) ease;
+  box-shadow: var(--hover-shadow);
+  border: 1px solid var(--border-color);
 }
 
 .skill-item:hover::after {
@@ -699,7 +701,7 @@ main {
   left: 50%;
   transform: translateX(-50%);
   border: 0.5rem solid transparent;
-  border-top-color: var(--text-color);
+  border-top-color: var(--card-bg);
   margin-bottom: -0.5rem;
   opacity: 0;
   transition: opacity var(--transition-speed) ease;
@@ -1005,9 +1007,13 @@ main {
 
 /* Ajustes específicos para el modo oscuro */
 [data-theme="dark"] .highlight-icon,
-[data-theme="dark"] .skill-icon,
 [data-theme="dark"] .project-link-icon,
 [data-theme="dark"] .contact-icon,
 [data-theme="dark"] .social-icon {
   filter: brightness(0) invert(1);
+}
+
+/* Ajustes específicos para los iconos de skills en modo oscuro */
+[data-theme="dark"] .skill-icon {
+  filter: none;
 }
