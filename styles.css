@@ -38,7 +38,7 @@
     rgb(18, 11, 3) 100%
   );
   --hover-color: rgb(250, 178, 96);
-  --card-bg: rgb(39, 29, 17);
+  --card-bg: rgb(77, 52, 24);
   --border-color: rgba(255, 255, 255, 0.1);
   --hover-bg: rgba(246, 143, 59, 0.2);
   --hover-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -108,7 +108,7 @@ body {
   color: var(--text-color);
 }
 
-.logo h1 {
+h1 {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
@@ -211,13 +211,14 @@ body {
     display: flex;
   }
 
-  .nav-link.active {
+  .nav-link.mobile {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
   }
 
   .theme-toggle {
     margin-left: 0;
     margin-top: 0.5rem;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -238,7 +239,7 @@ body {
 
 /* Ajustamos el main para que no tenga margen superior */
 main {
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 /* ==========================================================================
