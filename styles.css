@@ -98,9 +98,6 @@ h1 {
   height: 4rem;
   transition: max-height 0.4s ease;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-.main-nav.scrolled {
   background-color: var(--background-color);
   border-bottom: 1px solid var(--border-color);
 }
