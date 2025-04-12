@@ -1,52 +1,47 @@
 /* ==========================================================================
-   Variables globales
+Variables globales
    ========================================================================== */
 :root {
-  /* Colores modo claro */
-  --primary-color: rgb(235, 133, 37);
-  --primary-color-dark: rgb(216, 98, 29);
-  --text-color: #1f2937;
-  --text-color-light: rgb(99, 89, 75);
-  --background-color: rgb(253, 222, 174);
+  --primary-color: #5d4037; /* Marrón principal */
+  --primary-color-dark: #3e2723; /* Marrón más oscuro */
+  --text-color: #3e2723; /* Texto principal con alto contraste */
+  --text-color-light: #8d6e63; /* Marrón claro para texto suave */
+  --background-color: #efebe9; /* Fondo claro accesible */
   --background-gradient: linear-gradient(
     135deg,
-    rgb(255, 255, 255) 0%,
-    rgb(255, 136, 0) 100%
-  );
-  --hover-color: rgb(216, 129, 29);
+    #ffffff 0%,
+    #d7ccc8 100%
+  ); /* Suave y profesional */
+  --hover-color: #cba135; /* Acento dorado para hover */
   --transition-speed: 0.2s;
   --focus-outline: 2px solid var(--primary-color);
   --focus-outline-offset: 2px;
-  --card-bg: rgb(252, 224, 187);
+  --card-bg: #d7ccc8; /* Fondo de tarjetas */
   --border-color: rgba(0, 0, 0, 0.1);
-  --hover-bg: rgba(235, 126, 37, 0.1);
+  --hover-bg: rgba(93, 64, 55, 0.1); /* Hover suave en marrón */
   --hover-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --icon-color: rgb(55, 42, 31);
+  --icon-color: #5d4037; /* Íconos con marrón principal */
   --blur-effect: blur(10px);
   --backdrop-filter: var(--blur-effect);
 }
 
 [data-theme="dark"] {
-  --primary-color: rgb(246, 134, 59);
-  --primary-color-dark: rgb(235, 166, 37);
-  --text-color: #f3f4f6;
-  --text-color-light: #d1d5db;
-  --background-color: rgb(77, 52, 16);
-  --background-gradient: linear-gradient(
-    135deg,
-    rgb(65, 45, 29) 0%,
-    rgb(18, 11, 3) 100%
-  );
-  --hover-color: rgb(250, 178, 96);
-  --card-bg: rgb(77, 52, 24);
+  --primary-color: #8d6e63; /* Marrón claro */
+  --primary-color-dark: #5d4037; /* Marrón principal en dark */
+  --text-color: #efebe9; /* Texto claro sobre fondo oscuro */
+  --text-color-light: #d7ccc8; /* Texto más suave */
+  --background-color: #3e2723; /* Fondo oscuro elegante */
+  --background-gradient: linear-gradient(135deg, #3e2723 0%, #1c0f0a 100%);
+  --hover-color: #cba135; /* Acento dorado */
+  --card-bg: #5d4037; /* Fondo de tarjetas en modo oscuro */
   --border-color: rgba(255, 255, 255, 0.1);
-  --hover-bg: rgba(246, 143, 59, 0.2);
+  --hover-bg: rgba(203, 161, 53, 0.2); /* Hover dorado en modo dark */
   --hover-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --icon-color: #f3f4f6;
+  --icon-color: #efebe9;
 }
 
 /* ==========================================================================
-   Reset y estilos base
+Reset y estilos base
    ========================================================================== */
 * {
   margin: 0;
@@ -81,7 +76,7 @@ body {
 }
 
 /* ==========================================================================
-   Navegación principal
+Navegación principal
    ========================================================================== */
 h1 {
   font-size: 1.5rem;
@@ -128,18 +123,18 @@ h1 {
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   transition: all var(--transition-speed) ease;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link:hover {
-  color: var(--primary-color);
+  color: var(--hover-color);
   background-color: var(--hover-bg);
   transform: translateY(-2px);
   box-shadow: var(--hover-shadow);
 }
 
 .nav-link[aria-current="page"] {
-  color: var(--primary-color);
+  color: var(--hover-color);
   background-color: var(--hover-bg);
 }
 
@@ -243,7 +238,7 @@ main {
 }
 
 /* ==========================================================================
-   Sección Sobre Mí
+Sección Sobre Mí
    ========================================================================== */
 .about-section {
   padding: 3rem 1.5rem;
@@ -273,7 +268,7 @@ main {
 }
 
 .about-description strong {
-  color: var(--primary-color);
+  color: rgb(216, 98, 29);
   font-weight: 600;
 }
 
@@ -375,7 +370,7 @@ main {
 }
 
 /* ==========================================================================
-   Sección de Proyectos
+Sección de Proyectos
    ========================================================================== */
 .projects-section {
   padding: 3rem 1.5rem;
@@ -478,7 +473,7 @@ main {
 }
 
 .project-tech-stack li {
-  background-color: rgba(37, 99, 235, 0.1);
+  background-color: rgba(235, 126, 37, 0.1);
   color: var(--primary-color);
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
@@ -544,7 +539,7 @@ main {
 }
 
 /* ==========================================================================
-   Sección de Habilidades
+Sección de Habilidades
    ========================================================================== */
 .skills-section {
   padding: 3rem 1.5rem;
@@ -748,7 +743,7 @@ main {
 }
 
 /* ==========================================================================
-   Sección de Contacto
+Sección de Contacto
    ========================================================================== */
 .contact-section {
   max-width: 700px;
@@ -832,7 +827,7 @@ main {
 }
 
 /* ==========================================================================
-   Footer
+Footer
    ========================================================================== */
 .main-footer {
   background-color: var(--background-color);
@@ -928,7 +923,7 @@ main {
 }
 
 /* ==========================================================================
-   Animaciones
+Animaciones
    ========================================================================== */
 @keyframes slideIn {
   from {
