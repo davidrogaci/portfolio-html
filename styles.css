@@ -76,8 +76,6 @@ body {
   background: var(--background-gradient);
   min-height: 100vh;
   padding-top: 4rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   transition: background var(--transition-speed) ease,
     color var(--transition-speed) ease;
 }
@@ -130,7 +128,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   transition: all var(--transition-speed) ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .nav-link:hover {
@@ -211,6 +209,10 @@ body {
 
   .nav-links.active {
     display: flex;
+  }
+
+  .nav-link.active {
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
   }
 
   .theme-toggle {
