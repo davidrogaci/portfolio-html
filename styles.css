@@ -83,6 +83,13 @@ body {
 /* ==========================================================================
    Navegación principal
    ========================================================================== */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -106,13 +113,6 @@ body {
 .logo {
   text-decoration: none;
   color: var(--text-color);
-}
-
-h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.2;
 }
 
 .nav-links {
@@ -635,9 +635,8 @@ main {
 }
 
 .skill-percentage {
-  color: var(--primary-color);
   font-size: 0.75rem;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .skill-bar {
