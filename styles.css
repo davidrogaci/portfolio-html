@@ -7,7 +7,7 @@
   --primary-color-dark: rgb(216, 98, 29);
   --text-color: #1f2937;
   --text-color-light: rgb(99, 89, 75);
-  --background-color: rgb(255, 187, 86);
+  --background-color: rgb(253, 222, 174);
   --background-gradient: linear-gradient(
     135deg,
     rgb(255, 255, 255) 0%,
@@ -31,7 +31,7 @@
   --primary-color-dark: rgb(235, 166, 37);
   --text-color: #f3f4f6;
   --text-color-light: #d1d5db;
-  --background-color: rgb(18, 12, 3);
+  --background-color: rgb(77, 52, 16);
   --background-gradient: linear-gradient(
     135deg,
     rgb(65, 45, 29) 0%,
@@ -96,16 +96,13 @@ body {
   right: 0;
   z-index: 1000;
   height: 4rem;
-  transition: all 0.3s ease;
+  transition: max-height 0.4s ease;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav.scrolled {
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: var(--backdrop-filter);
-  backdrop-filter: var(--backdrop-filter);
+  background-color: var(--background-color);
   border-bottom: 1px solid var(--border-color);
-  box-shadow: none;
 }
 
 .logo {
@@ -133,6 +130,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   transition: all var(--transition-speed) ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link:hover {
@@ -207,9 +205,7 @@ body {
   }
 
   .nav-links.scrolled {
-    background-color: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: var(--backdrop-filter);
-    backdrop-filter: var(--backdrop-filter);
+    background-color: var(--background-color);
     border-bottom: 1px solid var(--border-color);
   }
 
