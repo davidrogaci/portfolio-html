@@ -2,8 +2,8 @@ const CACHE_NAME = "portfolio-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/styles.css",
-  "/scripts.js",
+  "/styles.min.css",
+  "/scripts.min.js",
   "/manifest.json",
   "/images/profile/profile.webp",
   "/images/icons/icon-192x192.webp",
