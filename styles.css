@@ -3,36 +3,44 @@
    ========================================================================== */
 :root {
   /* Colores modo claro */
-  --primary-color: #2563eb;
-  --primary-color-dark: #1d4ed8;
+  --primary-color: rgb(235, 133, 37);
+  --primary-color-dark: rgb(216, 98, 29);
   --text-color: #1f2937;
-  --text-color-light: #4b5563;
-  --background-color: #ffffff;
-  --background-gradient: linear-gradient(135deg, #e5e7eb 0%, #ffffff 100%);
-  --hover-color: #1d4ed8;
+  --text-color-light: rgb(99, 89, 75);
+  --background-color: rgb(255, 187, 86);
+  --background-gradient: linear-gradient(
+    135deg,
+    rgb(255, 255, 255) 0%,
+    rgb(255, 136, 0) 100%
+  );
+  --hover-color: rgb(216, 129, 29);
   --transition-speed: 0.2s;
   --focus-outline: 2px solid var(--primary-color);
   --focus-outline-offset: 2px;
-  --card-bg: rgb(241, 245, 248);
+  --card-bg: rgb(252, 224, 187);
   --border-color: rgba(0, 0, 0, 0.1);
-  --hover-bg: rgba(37, 99, 235, 0.1);
+  --hover-bg: rgba(235, 126, 37, 0.1);
   --hover-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --icon-color: #1f2937;
+  --icon-color: rgb(55, 42, 31);
   --blur-effect: blur(10px);
   --backdrop-filter: var(--blur-effect);
 }
 
 [data-theme="dark"] {
-  --primary-color: #3b82f6;
-  --primary-color-dark: #2563eb;
+  --primary-color: rgb(246, 134, 59);
+  --primary-color-dark: rgb(235, 166, 37);
   --text-color: #f3f4f6;
   --text-color-light: #d1d5db;
-  --background-color: #030712;
-  --background-gradient: linear-gradient(135deg, #111827 0%, #030712 100%);
-  --hover-color: #60a5fa;
-  --card-bg: #111827;
+  --background-color: rgb(18, 12, 3);
+  --background-gradient: linear-gradient(
+    135deg,
+    rgb(65, 45, 29) 0%,
+    rgb(18, 11, 3) 100%
+  );
+  --hover-color: rgb(250, 178, 96);
+  --card-bg: rgb(39, 29, 17);
   --border-color: rgba(255, 255, 255, 0.1);
-  --hover-bg: rgba(59, 130, 246, 0.2);
+  --hover-bg: rgba(246, 143, 59, 0.2);
   --hover-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   --icon-color: #f3f4f6;
 }
