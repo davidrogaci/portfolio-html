@@ -1,237 +1,85 @@
 /* ==========================================================================
-Variables globales
-   ========================================================================== */
+Variables y Configuración Global
+========================================================================== */
 :root {
-  --primary-color: #5d4037; /* Marrón principal */
-  --primary-color-dark: #3e2723; /* Marrón más oscuro */
-  --text-color: #3e2723; /* Texto principal con alto contraste */
-  --text-color-light: #8d6e63; /* Marrón claro para texto suave */
-  --background-color: #efebe9; /* Fondo claro accesible */
-  --background-gradient: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #d7ccc8 100%
-  ); /* Suave y profesional */
-  --hover-color: #cba135; /* Acento dorado para hover */
+  /* Colores principales */
+  --primary-color: #5d4037;
+  --primary-color-dark: #3e2723;
+  --text-color: #3e2723;
+  --text-color-light: #8d6e63;
+  --background-color: #efebe9;
+  --hover-color: #cba135;
+
+  /* Gradientes */
+  --background-gradient: linear-gradient(135deg, #ffffff 0%, #d7ccc8 100%);
+
+  /* Efectos y transiciones */
   --transition-speed: 0.2s;
+  --blur-effect: blur(10px);
+  --hover-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Accesibilidad */
   --focus-outline: 2px solid var(--primary-color);
   --focus-outline-offset: 2px;
-  --card-bg: #d7ccc8; /* Fondo de tarjetas */
-  --border-color: rgba(0, 0, 0, 0.1);
-  --hover-bg: rgba(93, 64, 55, 0.1); /* Hover suave en marrón */
-  --hover-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --icon-color: #5d4037; /* Íconos con marrón principal */
-  --blur-effect: blur(10px);
-  --backdrop-filter: var(--blur-effect);
-}
-
-[data-theme="dark"] {
-  --primary-color: #8d6e63; /* Marrón claro */
-  --primary-color-dark: #5d4037; /* Marrón principal en dark */
-  --text-color: #efebe9; /* Texto claro sobre fondo oscuro */
-  --text-color-light: #d7ccc8; /* Texto más suave */
-  --background-color: #3e2723; /* Fondo oscuro elegante */
-  --background-gradient: linear-gradient(135deg, #3e2723 0%, #1c0f0a 100%);
-  --hover-color: #cba135; /* Acento dorado */
-  --card-bg: #5d4037; /* Fondo de tarjetas en modo oscuro */
-  --border-color: rgba(255, 255, 255, 0.1);
-  --hover-bg: rgba(203, 161, 53, 0.2); /* Hover dorado en modo dark */
-  --hover-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --icon-color: #efebe9;
 }
 
 /* ==========================================================================
-Reset y estilos base
-   ========================================================================== */
-* {
+Tema Oscuro
+========================================================================== */
+[data-theme="dark"] {
+  --primary-color: #8d6e63;
+  --primary-color-dark: #5d4037;
+  --text-color: #efebe9;
+  --text-color-light: #d7ccc8;
+  --background-color: #3e2723;
+  --background-gradient: linear-gradient(135deg, #3e2723 0%, #1c0f0a 100%);
+  --hover-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+Utilidades y Clases Base
+========================================================================== */
+.transition-all {
+  transition: all var(--transition-speed) ease;
+}
+
+.hover-lift {
+  transition: transform var(--transition-speed) ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* ==========================================================================
+Layout y Estructura
+========================================================================== */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-:focus {
-  outline: var(--focus-outline);
-  outline-offset: var(--focus-outline-offset);
-}
-
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-:focus-visible {
-  outline: var(--focus-outline);
-  outline-offset: var(--focus-outline-offset);
-}
-
-body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, sans-serif;
-  line-height: 1.4;
+  font-family: "Inter", sans-serif;
+  background-color: var(--background-color);
   color: var(--text-color);
-  background: var(--background-gradient);
-  min-height: 100vh;
-  padding-top: 4rem;
-  transition: background var(--transition-speed) ease,
-    color var(--transition-speed) ease;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* ==========================================================================
-Navegación principal
-   ========================================================================== */
-h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.2;
-}
-
+Navegación
+========================================================================== */
 .main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 4rem;
-  transition: max-height 0.4s ease;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   background-color: var(--background-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.logo {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.nav-link {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  transition: all var(--transition-speed) ease;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-}
-
-.nav-link:hover {
-  color: var(--hover-color);
-  background-color: var(--hover-bg);
-  transform: translateY(-2px);
   box-shadow: var(--hover-shadow);
-}
-
-.nav-link[aria-current="page"] {
-  color: var(--hover-color);
-  background-color: var(--hover-bg);
-}
-
-.nav-link:focus-visible {
-  outline-offset: 4px;
-}
-
-/* Botón del menú móvil */
-.mobile-menu-button {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.menu-icon {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background-color: var(--text-color);
-  position: relative;
-  transition: all var(--transition-speed) ease;
-}
-
-.menu-icon::before,
-.menu-icon::after {
-  content: "";
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  background-color: var(--text-color);
-  transition: all var(--transition-speed) ease;
-}
-
-.menu-icon::before {
-  top: -8px;
-}
-
-.menu-icon::after {
-  bottom: -8px;
-}
-
-/* Media queries para diseño responsivo */
-@media (max-width: 768px) {
-  .mobile-menu-button {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var(--background-color);
-    padding: 1rem;
-    flex-direction: column;
-    gap: 1rem;
-    transition: all 0.3s ease;
-  }
-
-  .nav-links.scrolled {
-    background-color: var(--background-color);
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-link.mobile {
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .theme-toggle {
-    margin-left: 0;
-    margin-top: 0.5rem;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
-  }
-}
-
-/* Animación del botón del menú */
-.mobile-menu-button[aria-expanded="true"] .menu-icon {
-  background-color: transparent;
-}
-
-.mobile-menu-button[aria-expanded="true"] .menu-icon::before {
-  transform: rotate(45deg);
-  top: 0;
-}
-
-.mobile-menu-button[aria-expanded="true"] .menu-icon::after {
-  transform: rotate(-45deg);
-  bottom: 0;
-}
-
-/* Ajustamos el main para que no tenga margen superior */
-main {
-  /* padding: 2rem; */
 }
 
 /* ==========================================================================
@@ -239,6 +87,9 @@ Sección Sobre Mí
    ========================================================================== */
 .about-section {
   padding: 3rem 1.5rem;
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  align-items: center;
 }
 
 .about-content {
@@ -371,6 +222,10 @@ Sección de Proyectos
    ========================================================================== */
 .projects-section {
   padding: 3rem 1.5rem;
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .projects-section h2 {
@@ -540,6 +395,10 @@ Sección de Habilidades
    ========================================================================== */
 .skills-section {
   padding: 3rem 1.5rem;
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .skills-section h2 {
@@ -747,6 +606,10 @@ Sección de Contacto
   margin: 0 auto;
   padding: 3rem 1.5rem;
   text-align: center;
+  min-height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact-description {
@@ -961,7 +824,7 @@ Animaciones
   transition: stroke var(--transition-speed) ease;
 }
 
-/* Transiciones suaves */
+/* Aplicar clases reutilizables */
 .nav-link,
 .project-card,
 .project-link,
@@ -969,29 +832,25 @@ Animaciones
 .contact-link,
 .social-link,
 .theme-toggle {
-  transition: all var(--transition-speed) ease;
+  @extend .transition-all;
 }
 
-/* Estilos para iconos */
 .highlight-icon,
 .skill-icon,
 .project-link-icon,
 .contact-icon,
 .social-icon {
-  color: var(--icon-color);
-  transition: color var(--transition-speed) ease;
+  @extend .icon-base;
 }
 
-/* Ajustes específicos para el botón de tema */
-.theme-toggle svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: none;
-  stroke: var(--icon-color);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: stroke var(--transition-speed) ease;
+.nav-link:hover,
+.project-card:hover,
+.skill-category:hover {
+  @extend .hover-lift;
+}
+
+.highlight-item:hover {
+  @extend .hover-slide;
 }
 
 /* Ajustes para iconos en hover */

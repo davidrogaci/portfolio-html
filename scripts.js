@@ -1,4 +1,7 @@
-// Verificar si el navegador soporta localStorage
+/**
+ * Verifica si el navegador soporta localStorage
+ * @returns {boolean} - true si localStorage está disponible
+ */
 const isLocalStorageSupported = () => {
   try {
     const test = "__storage_test__";
@@ -6,66 +9,104 @@ const isLocalStorageSupported = () => {
     localStorage.removeItem(test);
     return true;
   } catch (e) {
+    console.warn("localStorage no está disponible:", e);
     return false;
   }
 };
 
-// Script para el cambio de tema
-const themeToggle = document.querySelector(".theme-toggle");
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+/**
+ * Configuración del tema
+ */
+const themeConfig = {
+  toggle: document.querySelector(".theme-toggle"),
+  prefersDarkScheme: window.matchMedia("(prefers-color-scheme: dark)"),
+  themes: {
+    light: "light",
+    dark: "dark",
+  },
+};
 
-// Función para establecer el tema
+/**
+ * Establece el tema en el documento
+ * @param {string} theme - El tema a establecer ('light' o 'dark')
+ */
 function setTheme(theme) {
-  if (!theme) return;
+  if (!theme || !Object.values(themeConfig.themes).includes(theme)) {
+    console.error("Tema inválido:", theme);
+    return;
+  }
 
-  document.documentElement.setAttribute("data-theme", theme);
-  if (isLocalStorageSupported()) {
-    localStorage.setItem("theme", theme);
+  try {
+    document.documentElement.setAttribute("data-theme", theme);
+    if (isLocalStorageSupported()) {
+      localStorage.setItem("theme", theme);
+    }
+  } catch (error) {
+    console.error("Error al establecer el tema:", error);
   }
 }
 
-// Función para cambiar el tema
+/**
+ * Cambia el tema actual
+ */
 function toggleTheme() {
-  if (!themeToggle) return;
+  if (!themeConfig.toggle) {
+    console.warn("Botón de cambio de tema no encontrado");
+    return;
+  }
 
-  const currentTheme = document.documentElement.getAttribute("data-theme");
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-  setTheme(newTheme);
+  try {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme =
+      currentTheme === themeConfig.themes.dark
+        ? themeConfig.themes.light
+        : themeConfig.themes.dark;
+    setTheme(newTheme);
+  } catch (error) {
+    console.error("Error al cambiar el tema:", error);
+  }
 }
 
-// Inicializar el tema
+/**
+ * Inicializa el tema basado en preferencias guardadas o del sistema
+ */
 function initializeTheme() {
-  if (!themeToggle) return;
+  if (!themeConfig.toggle) return;
 
-  let savedTheme = null;
-  if (isLocalStorageSupported()) {
-    savedTheme = localStorage.getItem("theme");
-  }
+  try {
+    let savedTheme = null;
+    if (isLocalStorageSupported()) {
+      savedTheme = localStorage.getItem("theme");
+    }
 
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else if (prefersDarkScheme.matches) {
-    setTheme("dark");
-  } else {
-    setTheme("light");
+    if (savedTheme && Object.values(themeConfig.themes).includes(savedTheme)) {
+      setTheme(savedTheme);
+    } else if (themeConfig.prefersDarkScheme.matches) {
+      setTheme(themeConfig.themes.dark);
+    } else {
+      setTheme(themeConfig.themes.light);
+    }
+  } catch (error) {
+    console.error("Error al inicializar el tema:", error);
+    setTheme(themeConfig.themes.light); // Fallback al tema claro
   }
 }
 
-// Event listeners
-if (themeToggle) {
-  themeToggle.addEventListener("click", toggleTheme);
-}
+// Event Listeners
+document.addEventListener("DOMContentLoaded", () => {
+  initializeTheme();
 
-if (prefersDarkScheme) {
-  prefersDarkScheme.addEventListener("change", (e) => {
-    if (!isLocalStorageSupported() || !localStorage.getItem("theme")) {
-      setTheme(e.matches ? "dark" : "light");
+  if (themeConfig.toggle) {
+    themeConfig.toggle.addEventListener("click", toggleTheme);
+  }
+
+  // Escuchar cambios en las preferencias del sistema
+  themeConfig.prefersDarkScheme.addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      setTheme(e.matches ? themeConfig.themes.dark : themeConfig.themes.light);
     }
   });
-}
-
-// Inicializar el tema al cargar la página
-initializeTheme();
+});
 
 // Script para el menú móvil
 const mobileMenuButton = document.querySelector(".mobile-menu-button");

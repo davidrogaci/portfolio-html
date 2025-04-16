@@ -69,14 +69,16 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="styles.min.css" as="style">
+    <link rel="preload" href="images/profile/profile.webp" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
   </head>
   <body>
     <!-- Header y navegación principal -->
     <header role="banner">
       <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html" class="logo">
-          <h1>@davidrogaci</h1>
-        </a>
         <button
           class="mobile-menu-button"
           aria-label="Toggle menu"
@@ -92,6 +94,7 @@
           <a href="#projects" class="nav-link mobile">Projects</a>
           <a href="#skills" class="nav-link mobile">Skills</a>
           <a href="#contact" class="nav-link mobile">Contact</a>
+          <a href="https://docs.google.com/document/d/1tDdAP-xx5HWjzJ7ZWNCivG1jOMxdM86a/edit?usp=sharing&ouid=104315589973788176820&rtpof=true&sd=true" target="_blank" class="nav-link mobile cv-button">CV</a>
           <button class="theme-toggle active" aria-label="Toggle theme">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +167,7 @@
           </div>
           <div class="about-image">
             <img
-              src="images/profile/profile.webp"
+              src="./images/profile/profile.webp"
               alt="profile picture of David Rodriguez"
               width="400"
               height="400"
@@ -185,7 +188,7 @@
           <article class="project-card" role="listitem">
             <div class="project-image">
               <img
-                src="images/projects/sneakers-ecommerce.webp"
+                src="./images/projects/sneakers-ecommerce.webp"
                 alt="Sneakers E-commerce Preview"
                 width="600"
                 height="400"
@@ -271,7 +274,7 @@
           <article class="project-card" role="listitem">
             <div class="project-image">
               <img
-                src="images/projects/jordan-landing.webp"
+                src="./images/projects/jordan-landing.webp"
                 alt="Jordan 1 Landing Page Preview"
                 width="600"
                 height="400"
@@ -357,7 +360,7 @@
           <article class="project-card" role="listitem">
             <div class="project-image">
               <img
-                src="images/projects/loan-calculator.webp"
+                src="./images/projects/loan-calculator.webp"
                 alt="Loan Calculator Preview"
                 width="600"
                 height="400"

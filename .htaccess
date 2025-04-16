@@ -23,7 +23,7 @@
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-XSS-Protection "1; mode=block"
-    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Frame-Options "DENY"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
@@ -35,4 +35,7 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 # Force HTTPS
 RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Content Security Policy
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.google-analytics.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" 
