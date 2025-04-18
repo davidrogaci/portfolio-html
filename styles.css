@@ -816,12 +816,6 @@ Animaciones
 .theme-toggle svg {
   width: 1.5rem;
   height: 1.5rem;
-  fill: none;
-  stroke: var(--icon-color);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: stroke var(--transition-speed) ease;
 }
 
 /* Aplicar clases reutilizables */
